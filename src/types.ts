@@ -173,7 +173,7 @@ export type PromptSyncHistoryObj = {
 };
 
 export type Config = {
-  autocomplete: {
+  autocomplete?: {
     // determines how the library responds to the searchFn results
     behavior: AutocompleteBehavior;
     // determines whether the behavior of autocomplete SUGGEST should fill the given input with the common substring of results
@@ -190,16 +190,16 @@ export type Config = {
     triggerKey: Key;
   };
   // determines which character is output to the terminal on key press
-  echo: string;
+  echo?: string;
   // determines behavior of ^D,
-  eot: boolean;
+  eot?: boolean;
   // a globally default response to return on any prompt that takes no input
-  defaultResponse: string;
+  defaultResponse?: string;
   // the prompt-sync-history object
   // see https://github.com/davidmarkclements/prompt-sync-history
   history?: PromptSyncHistoryObj;
   // determines behavior of ^C; (default) false: ^C returns null; true: process exits with code 130
-  sigint: boolean;
+  sigint?: boolean;
 };
 
 export const ConfigSchema = Joi.object({

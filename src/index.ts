@@ -225,7 +225,7 @@ const reset = () => {
   inputEndPosition = { row: 1, col: 1 };
 };
 
-export default function PromptSyncPlus(config: Config | undefined) {
+export default function PromptSyncPlus(config?: Config) {
   const globalConfig = config
     ? mergeLeft(mergeLeft(EMPTY_CONFIG, config), DEFAULT_CONFIG)
     : DEFAULT_CONFIG;
